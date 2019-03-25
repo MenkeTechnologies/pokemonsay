@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 usage() {
 	echo
@@ -123,7 +123,7 @@ pokemon_name="${filename%.*}"
 if [ -n "$THINK" ]; then
 	cowthink -f "$pokemon_cow" $word_wrap $MESSAGE
 else
-	cowsay -f "$pokemon_cow" $word_wrap $MESSAGE
+    cowsay -f <(cat "$pokemon_cow") $word_wrap $MESSAGE
 fi
 
 # Write the pokemon name, unless requested otherwise.
